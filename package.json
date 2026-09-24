@@ -1,0 +1,23 @@
+{
+  "name": "@lynra/design-system",
+  "version": "1.0.0",
+  "description": "Lynra brand tokens, fonts, logos, UI kits and templates",
+  "private": true,
+  "style": "styles.css",
+  "files": ["styles.css", "colors_and_type.css", "tokens/", "fonts/", "assets/", "ui_kits/", "slides/", "_ds_bundle.js", "docs/"],
+  "exports": {
+    "./styles.css": "./styles.css",
+    "./tokens.css": "./colors_and_type.css",
+    "./tokens.json": "./tokens/tokens.json",
+    "./bundle": "./_ds_bundle.js",
+    "./logos/*": "./assets/logos/*"
+  },
+  "scripts": {
+    "tokens": "node scripts/build-tokens.mjs",
+    "serve": "npx serve ."
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

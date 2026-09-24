@@ -1,0 +1,47 @@
+/* Preview card shared base. Each card is a ~700×N px artboard. */
+
+@import url("../colors_and_type.css");
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01" on, "ss02" on;
+}
+
+.card {
+  width: 700px;
+  padding: 28px 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-tight { padding: 24px 28px; gap: 16px; }
+.card-flush { padding: 0; gap: 0; }
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0;
+  color: var(--fg-muted);
+}

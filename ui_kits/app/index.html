@@ -1,0 +1,188 @@
+<!doctype html>
+<!-- @dsCard group="UI Kit — App" name="App UI kit — Lynra Portal" subtitle="Resident app: canonical check-in screen + dashboard, services, village, account tabs." viewport="460x940" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lynra Portal — App UI Kit</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css">
+<style>
+  html, body { margin:0; padding:0; background: #1A1A1D;
+    min-height:100vh; display:flex; justify-content:center; align-items:flex-start;
+    padding: 32px 16px;
+  }
+
+  /* Phone shell — fixed iPhone-ish aspect at design size */
+  .phone {
+    width: 390px;
+    height: 844px;
+    background: var(--bg);
+    border-radius: 48px;
+    overflow: hidden;
+    position: relative;
+    box-shadow:
+      0 0 0 12px #0E0E10,
+      0 30px 80px rgba(0,0,0,0.55);
+  }
+  .phone::before {
+    content:""; position:absolute; top:8px; left:50%;
+    transform: translateX(-50%);
+    width: 120px; height: 32px; background:#0E0E10;
+    border-radius: 999px; z-index: 10;
+  }
+
+  .status-bar {
+    position: absolute; top: 0; left:0; right:0; height: 54px;
+    padding: 18px 32px 0; display:flex; align-items:center;
+    justify-content: space-between;
+    font-family: var(--font-body); font-weight: 600; font-size: 15px;
+    color: var(--fg); z-index: 5;
+  }
+  .status-bar .icons { display:flex; gap:6px; align-items:center; }
+
+  .screen {
+    position: absolute; inset: 0;
+    padding-top: 54px;
+    overflow: hidden;
+    display:flex; flex-direction: column;
+  }
+
+  /* App chrome shared by all screens */
+  .app-top {
+    padding: 12px 24px 0;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .app-top .brand {
+    display:flex; align-items:center; gap:8px;
+    font-family: var(--font-display); font-weight: 500;
+    font-size: 22px; letter-spacing:-0.02em;
+  }
+  .app-top .brand img { height: 22px; }
+
+  .menu-btn {
+    background: var(--bg-elev); border:1px solid var(--border);
+    border-radius: 999px; width: 40px; height: 40px;
+    display: inline-flex; align-items: center; justify-content: center;
+    cursor:pointer; color: var(--fg);
+  }
+
+  /* Bottom tab bar */
+  .tab-bar {
+    position: absolute; left: 16px; right: 16px; bottom: 16px;
+    background: var(--lynra-obsidian); color: var(--lynra-ash);
+    border-radius: 999px;
+    height: 64px; padding: 0 8px;
+    display:flex; align-items: center; justify-content: space-around;
+    z-index: 4; box-shadow: 0 8px 24px rgba(36,36,40,0.25);
+  }
+  .tab-bar button {
+    background: transparent; border: 0; cursor: pointer;
+    color: var(--lynra-haze);
+    display:flex; flex-direction:column; align-items:center; gap:2px;
+    padding: 8px 14px; border-radius: 999px;
+    font-family: var(--font-body); font-weight: 500; font-size: 10px;
+    transition: all var(--dur-base) var(--ease-standard);
+  }
+  .tab-bar button.active {
+    background: var(--lynra-ash); color: var(--lynra-obsidian);
+  }
+  .tab-bar button i { font-size: 20px; }
+
+  .scroll {
+    flex: 1; overflow-y: auto; padding: 16px 24px 100px;
+    scroll-behavior: smooth;
+  }
+
+  /* Card primitive */
+  .a-card {
+    background: var(--bg-elev); border-radius: var(--radius-md);
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- Design-system bundle: exposes window.LynraDesignSystem_019e30 -->
+<script src="../../_ds_bundle.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+const { StatusBar, TabBar, CheckInScreen, DashboardScreen, ServiceScreen, VillageScreen } = window.LynraDesignSystem_019e30;
+
+function App() {
+  // Start with the canonical "check-in complete" screen, then navigate.
+  const [tab, setTab] = React.useState("checkin");
+
+  let body;
+  if (tab === "checkin") {
+    body = <CheckInScreen onContinue={() => setTab("dash")}/>;
+  } else if (tab === "dash") {
+    body = <DashboardScreen
+              onOpenServices={() => setTab("service")}
+              onOpenVillage={()  => setTab("village")}/>;
+  } else if (tab === "service") {
+    body = <ServiceScreen/>;
+  } else if (tab === "village") {
+    body = <VillageScreen/>;
+  } else if (tab === "profile") {
+    body = <ProfilePlaceholder/>;
+  }
+
+  return (
+    <div className="phone">
+      <StatusBar/>
+      {body}
+      {tab !== "checkin" && (
+        <TabBar active={tab} onChange={setTab}/>
+      )}
+    </div>
+  );
+}
+
+function ProfilePlaceholder() {
+  return (
+    <div className="screen">
+      <div className="app-top">
+        <div className="brand">
+          <img src="../../assets/logos/lynra-symbol-obsidian.svg" alt=""/>
+          <span>Account</span>
+        </div>
+      </div>
+      <div className="scroll" style={{display:"flex", flexDirection:"column", gap:16}}>
+        <h2 style={{fontFamily:"var(--font-display)", fontWeight:500, fontSize:32, letterSpacing:"-0.03em", margin:"8px 0 0"}}>Emil Lindgren</h2>
+        <div style={{color:"var(--fg-muted)", fontSize:13}}>Polaris Village · Room 218 · 12 Jun → 28 Jun</div>
+
+        <div style={{background:"var(--bg-elev)", borderRadius:"var(--radius-md)", padding:20, marginTop: 16, display:"flex", flexDirection:"column", gap: 14}}>
+          {[
+            ["ph-bed", "Room details", "Ground floor, quiet wing"],
+            ["ph-key", "Room key", "Active on this device"],
+            ["ph-file-text", "Arrival letter", "Sent 10 Jun"],
+            ["ph-receipt", "Stay invoice", "Paid in advance"],
+            ["ph-headset", "Contact support", "24/7"],
+          ].map(([icon, label, meta]) => (
+            <div key={label} style={{display:"flex", alignItems:"center", gap:14}}>
+              <i className={`ph-light ${icon}`} style={{fontSize:22}}></i>
+              <div style={{flex:1}}>
+                <div style={{fontWeight:600, fontSize:14}}>{label}</div>
+                <div style={{fontSize:12, color:"var(--fg-muted)"}}>{meta}</div>
+              </div>
+              <span style={{fontFamily:"var(--font-display)", color:"var(--fg-muted)"}}>→</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+
+</body>
+</html>

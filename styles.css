@@ -1,0 +1,17 @@
+/* ============================================================
+   Lynra Design System — canonical entry point
+   Consumers link THIS file to get fonts + tokens + element
+   defaults in one import.
+
+   Closure:
+     fonts/fonts.css      — @font-face (Funnel Display, Inter Tight)
+     colors_and_type.css  — design tokens + element/utility defaults
+                            (already @imports fonts/fonts.css)
+
+   Page-specific layout sheets (apartment-info/_styles.css,
+   house-rules/_styles.css, laundry-schedule/_styles.css, etc.)
+   are intentionally NOT imported here — they are per-document
+   print layouts, not part of the shared token layer.
+   ============================================================ */
+
+@import url("./colors_and_type.css");

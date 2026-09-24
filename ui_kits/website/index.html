@@ -1,0 +1,133 @@
+<!doctype html>
+<!-- @dsCard group="UI Kit — Website" name="Website UI kit" subtitle="Marketing site: hero, value props, Bento overview, village cards, promise statement, footer." viewport="1440x1100" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>Lynra — Website UI Kit</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css">
+<style>
+  html, body { margin:0; padding:0; background: var(--bg); }
+  .meta-strip {
+    height: 52px; padding: 0 var(--layout-margin);
+    display: flex; align-items: center; gap: 22px;
+    font-family: var(--font-body); font-weight: 500;
+    font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--fg); border-bottom: 1px solid var(--divider);
+    background: var(--bg);
+  }
+  .meta-strip .muted { color: var(--fg-muted); }
+  .meta-strip .sep { width:1px; height:14px; background: var(--border); margin: 0 8px; }
+  .meta-strip .right { margin-left:auto; display:flex; gap:22px; }
+
+  .header {
+    padding: 24px var(--layout-margin);
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; background: var(--bg); z-index: 5;
+  }
+  .header img { height: 32px; }
+  .nav { display:flex; gap:32px; }
+  .nav button {
+    background: none; border: 0; cursor: pointer;
+    font-family: var(--font-body); font-weight: 500; font-size: 15px;
+    color: var(--fg); padding: 4px 0;
+    transition: color var(--dur-base) var(--ease-standard);
+  }
+  .nav button:hover { color: var(--lynra-umber); }
+  .nav button.active { font-weight: 600; }
+  .cta-pill {
+    background: var(--bg-inverse); color: var(--fg-on-inverse);
+    border: 0; border-radius: var(--radius-pill); padding: 12px 22px;
+    font-family: var(--font-body); font-weight: 500; font-size: 14px;
+    display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+    transition: background var(--dur-base) var(--ease-standard);
+  }
+  .cta-pill:hover { background: var(--lynra-granite); }
+  .cta-pill.ember { background: var(--lynra-red-ember); color: var(--lynra-umber); }
+  .cta-pill.ember:hover { background: var(--lynra-umber); color: var(--lynra-red-ember); }
+  .cta-ghost {
+    background: transparent; color: var(--fg);
+    border: 1px solid var(--fg); border-radius: var(--radius-pill);
+    padding: 11px 21px; font-family: var(--font-body); font-weight: 500;
+    font-size: 14px; cursor: pointer;
+  }
+
+  .page-wrap { padding: 0 var(--layout-margin) 80px; }
+
+  /* Section utility */
+  .section { padding: 80px 0; }
+  .section-label {
+    font-family: var(--font-body); font-weight: 500; font-size: 13px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--fg-muted); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before { content: ""; width: 24px; height: 1px; background: var(--fg-muted); }
+</style>
+</head>
+<body>
+
+<!-- React + Babel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- Design-system bundle: exposes window.LynraDesignSystem_019e30 -->
+<script src="../../_ds_bundle.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+const { MetaStrip, SiteHeader, Hero, ValueProps, BentoOverview, VillageCard, QuoteBlock, SiteFooter } = window.LynraDesignSystem_019e30;
+
+function App() {
+  const [active, setActive] = React.useState("Villages");
+
+  return (
+    <>
+      <MetaStrip section={active} chapter="A Strawberry Living company"/>
+      <SiteHeader active={active} onNav={setActive}/>
+
+      <div className="page-wrap">
+        <Hero/>
+
+        <ValueProps/>
+
+        <BentoOverview/>
+
+        <section className="section">
+          <div style={{display:"flex", justifyContent:"space-between", alignItems:"flex-end", marginBottom: 40}}>
+            <div>
+              <div className="section-label">Our villages</div>
+              <h2 style={{
+                fontFamily:"var(--font-display)", fontWeight: 500,
+                fontSize: 68, lineHeight: 0.98, letterSpacing: "-0.04em",
+                margin: 0, maxWidth: 760,
+              }}>One system. Distinct locations.</h2>
+            </div>
+            <button className="cta-ghost">All locations →</button>
+          </div>
+          <div style={{display:"grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16}}>
+            <VillageCard name="Polaris" location="Luleå, SE" status="Now open"
+                         rooms={540} accent="var(--lynra-red-ember)"/>
+            <VillageCard name="Aurora" location="Boden, SE" status="Q4 2026"
+                         rooms={320} accent="var(--lynra-aluminium)"/>
+            <VillageCard name="Borealis" location="Skellefteå, SE" status="2027"
+                         rooms={680} accent="var(--lynra-clay)"/>
+          </div>
+        </section>
+
+        <QuoteBlock/>
+
+        <SiteFooter/>
+      </div>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+
+</body>
+</html>

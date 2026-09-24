@@ -1,0 +1,75 @@
+/* Shared slide chrome — replicates the brandbook deck.
+   Slides are designed at 1280×720 and scale to the viewport.
+   Typography stays Funnel Display Medium (500) — never crammed.
+   Elegance comes from generous space, looser tracking, taller leading. */
+
+@import url("../colors_and_type.css");
+
+html, body {
+  margin: 0; padding: 0;
+  background: #0E0E10;
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-body);
+}
+
+.slide {
+  width: 1280px; height: 720px;
+  background: var(--lynra-ash);
+  color: var(--fg);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  transform-origin: top left;
+}
+
+/* Meta strip — thin, airy, generous tracking */
+.slide .meta {
+  position: absolute; top: 0; left: 0; right: 0; height: 44px;
+  padding: 0 64px;
+  display: flex; align-items: center; gap: 24px;
+  font-family: var(--font-body); font-weight: 500;
+  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--fg); border-bottom: 1px solid var(--divider);
+}
+.slide .meta .m { color: var(--fg-muted); }
+.slide .meta .sep { width:1px; height:11px; background: var(--border); }
+.slide .meta .right { margin-left: auto; display:flex; gap:24px; }
+
+/* Page title — Funnel Display Medium, never crammed */
+.slide h1.page-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 84px;
+  line-height: 1.06;        /* never tight */
+  letter-spacing: -0.018em; /* tracked open, not collapsed */
+  color: var(--fg);
+  margin: 0;
+}
+
+.slide .body-region {
+  position: absolute; left: 64px; right: 64px; top: 72px; bottom: 52px;
+}
+
+/* Eyebrow / kicker — small, tracked, restrained */
+.slide .kicker {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  display: inline-flex; align-items: center; gap: 14px;
+}
+.slide .kicker::before {
+  content: ""; width: 24px; height: 1px; background: currentColor;
+}
+
+.slide .footer {
+  position: absolute; bottom: 22px; left: 64px; right: 64px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-body); font-weight: 500;
+  font-size: 10px; letter-spacing: 0.20em; text-transform: uppercase;
+  color: var(--fg-muted);
+}
+.slide .footer img { opacity: 0.55; }

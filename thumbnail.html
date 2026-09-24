@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lynra — thumbnail</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  html, body { margin: 0; width: 1280px; height: 854px; overflow: hidden; }
+  .tile { display: flex; width: 1280px; height: 854px; }
+  .main { flex: 1; background: var(--lynra-red-ember, #FF4D4F); display: flex; align-items: center; justify-content: center; }
+  .main img { width: 62%; height: auto; }
+  .strip { width: 25%; display: flex; flex-direction: column; }
+  .strip .sw { flex: 1; }
+</style>
+</head>
+<body>
+<div class="tile">
+  <div class="main"><img src="assets/logos/lynra-wordmark-white.svg" alt="Lynra"></div>
+  <div class="strip">
+    <div class="sw" style="background:#D6D0CC"></div>
+    <div class="sw" style="background:#ABA69B"></div>
+    <div class="sw" style="background:#3E3B34"></div>
+    <div class="sw" style="background:#4D0B00"></div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Form inputs" subtitle="Text, date pair, textarea, checkbox. White surface, Aluminium border, 10px radius." viewport="700x300" -->
+<html><head>
+<meta charset="utf-8"><title>Form inputs</title>
+<link rel="stylesheet" href="_card.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css">
+</head><body>
+<div class="card" style="background:#F6F4F4; height:300px; gap:14px;">
+  <span class="label">Form inputs · light borders, clear focus</span>
+  <div style="display:flex; flex-direction:column; gap:6px;">
+    <label style="font-family:var(--font-body); font-weight:500; font-size:13px; color:#3E3B34;">Booking reference</label>
+    <input value="POLARIS-2026-F28K3D" style="background:#FFFFFF; border:1px solid #D6D0CC; border-radius:10px; padding:12px 14px; font-family:var(--font-body); font-weight:500; font-size:15px; color:#242428; outline:none;">
+  </div>
+  <div class="row" style="gap:10px;">
+    <div style="flex:1; display:flex; flex-direction:column; gap:6px;">
+      <label style="font-family:var(--font-body); font-weight:500; font-size:13px; color:#3E3B34;">Arrival</label>
+      <div style="background:#FFFFFF; border:1px solid #D6D0CC; border-radius:10px; padding:12px 14px; display:flex; align-items:center; gap:10px;"><i class="ph-light ph-calendar" style="font-size:18px; color:#999"></i><span style="font-family:var(--font-body); font-weight:500; font-size:15px;">12 Jun 2026</span></div>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:6px;">
+      <label style="font-family:var(--font-body); font-weight:500; font-size:13px; color:#3E3B34;">Departure</label>
+      <div style="background:#FFFFFF; border:1px solid #D6D0CC; border-radius:10px; padding:12px 14px; display:flex; align-items:center; gap:10px;"><i class="ph-light ph-calendar" style="font-size:18px; color:#999"></i><span style="font-family:var(--font-body); font-weight:500; font-size:15px;">28 Jun 2026</span></div>
+    </div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:6px;">
+    <label style="font-family:var(--font-body); font-weight:500; font-size:13px; color:#3E3B34;">Notes</label>
+    <textarea rows="2" style="background:#FFFFFF; border:1px solid #D6D0CC; border-radius:10px; padding:12px 14px; font-family:var(--font-body); font-weight:500; font-size:15px; color:#242428; resize:none; outline:none;">Ground floor, quiet wing if possible. Allergic to feather pillows.</textarea>
+  </div>
+  <div class="row" style="gap:10px; align-items:center;">
+    <label style="display:inline-flex; align-items:center; gap:8px; font-family:var(--font-body); font-weight:500; font-size:14px; color:#242428;"><input type="checkbox" checked style="accent-color:#242428;"> Auto-confirm</label>
+    <span class="mono" style="margin-left:auto;">Focus: 2px Obsidian ring, 2px offset</span>
+  </div>
+</div>
+</body></html>
