@@ -1,0 +1,39 @@
+<!-- SlideContent: The deck's workhorse: a 90px title at left, a 36px statement in the right column — both starting at y = 386. — @dsCard group="Slides" page width=1280 height=720 subtitle="The deck's workhorse: a 90px title at left, a 36px statement in the right column — both starting at y = 386." -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<title>SlideContent</title>
+<style>
+  html, body { margin: 0; background: #0e0e10; }
+  .stage { width: 1280px; height: 720px; overflow: hidden; position: relative; }
+  .slide { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden;
+           background: var(--bg); color: var(--fg); font-family: var(--font-body); font-weight: 500;
+           transform: scale(.6666667); transform-origin: 0 0; }
+  .slide * { box-sizing: border-box; }
+  .abs { position: absolute; }
+  .meta { position: absolute; top: 0; left: 0; width: 1920px; height: 52px; font-size: 15px; line-height: 1.3; letter-spacing: -.01em; color: var(--fg); }
+  .meta span { position: absolute; top: 24px; white-space: nowrap; }
+  .title { position: absolute; margin: 0; font-family: var(--font-display); font-weight: 500; font-size: 90px; line-height: .98; letter-spacing: -.04em; color: var(--fg); white-space: nowrap; }
+  .statement { position: absolute; margin: 0; font-size: 36px; line-height: 1.4; }
+  .head24 { font-weight: 600; font-size: 24px; line-height: 1.3; letter-spacing: -.01em; }
+  .body16 { font-size: 16px; line-height: 1.35; }
+  .peg { position: absolute; border-radius: 50%; }
+  .tile { position: absolute; border-radius: var(--radius-md); }
+  .caption { position: absolute; width: 216px; font-size: 16px; line-height: 1.35; }
+  .caption .m { color: var(--fg-muted); }
+  p { margin: 0; }
+  /* slide text takes its container's colour; bundle.css's element defaults would otherwise paint every p and heading in fg */
+  .slide p, .slide h1, .slide h2, .slide h3, .slide h4, .slide h5, .slide h6, .slide blockquote, .slide span { color: inherit; }
+  .slide .title { color: var(--fg); }
+</style>
+</head>
+<body>
+<div class="stage"><div class="slide">
+<div class="meta"><span style="left:38px">Brand ID</span><span style="left:979px">Visual identity</span><span style="left:1135px">Signage</span><span style="left:1450px">Lynra</span><span style="left:1606px">2026</span><span style="left:1763px">Confidential</span></div>
+<h2 class="title" style="left:80px;top:386px">Intro</h2>
+<p class="statement" style="left:979px;top:386px;width:861px">This document defines the principles and systems that shape Lynra’s brand. It outlines how purpose, structure and visual discipline come together to create coherent, reliable environments — ensuring clarity, consistency and a unified expression across all villages and touchpoints.</p>
+</div></div>
+</body>
+</html>

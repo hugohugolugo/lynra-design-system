@@ -28,19 +28,19 @@ Normative rules for anyone (people or AI agents) producing Lynra material. **MUS
 3.1 Display and headlines **MUST** use **Funnel Display** — Medium 500 by default; SemiBold 600 / Bold 700 for emphasis only.
 3.2 Everything else **MUST** use **Inter Tight** — Medium 500 for body, SemiBold 600 for intros, subheadings and UI titles.
 3.3 Editorial quotes use **Times Now SemiLight Italic** (licensed); fallback **Frank Ruhl Libre** Light Italic.
-3.4 No other typefaces **MAY** be used.
+3.4 No other typefaces **MAY** be used — no system sans-serif and no monospace, in interfaces, specimens or code samples alike.
 3.5 Display tracking is `-0.04em`; mid-size display `-0.015em`; Inter SemiBold subheadings `-0.01em`.
 3.6 Sizes **MUST** come from the scale (base 16, ratio ≈ 1.618): 12 / 14 / 16 / 18 / 21 / 26 / 42 / 68 / 90 / 110 / 177 px.
-3.7 **Sentence case** everywhere — headlines, buttons, navigation, subheadings.
-3.8 ALL CAPS is reserved for very small utility labels and meta strips. It **MUST NOT** be used for headings or subheadings.
+3.7 **Sentence case** everywhere — headlines, buttons, navigation, subheadings, labels, the meta strip.
+3.8 ALL CAPS **MUST NOT** be used anywhere, and small labels **MUST NOT** be letter-spaced. The meta strip is the deck's Pres header: 15 px Inter Tight Medium, −1 % tracking, sentence case.
 3.9 Display headlines **MUST NOT** end with punctuation.
 3.10 Body line-height 1.35; display 0.98–1.1. Use `text-wrap: balance` on headings and `pretty` on paragraphs.
-3.11 Minimum sizes: 16 px body on web; 24 px on 1920×1080 slides; 12 pt in print.
+3.11 Minimum sizes: 16 px body on web; 21 px on 1920×1080 slides (26 px for anything a room must read from a distance); 12 pt in print.
 
 ## 4. Spacing & layout
 
 4.1 Spacing **MUST** follow the 8 px rule: 8 / 16 / 24 / 32 / 40 / 64 / 80 / 120.
-4.2 Deck canvas is 1920×1080 with 80 px side margins and a 52 px header (templates in `slides/` use a 1280×720 frame at the same proportions).
+4.2 Deck canvas is 1920×1080 with 80 px margins and a 52 px header, on a 12-column grid — 110 px columns, 40 px gutters, column *k* starting at 80 + 150(*k* − 1) — so the right column is column 7 (x = 980), a text measure five columns (710 px) and a card 271 px with 24 px gaps. The templates in `slides/` are laid out on this canvas and shown at 1280×720.
 4.3 Web containers max out at 1280–1440 px.
 4.4 **Peg-board principle:** every element sits in a defined slot on the column grid. Nothing free-floats.
 4.5 Use `flex`/`grid` with `gap` for sibling groups, not per-element margins.
@@ -110,3 +110,10 @@ Normative rules for anyone (people or AI agents) producing Lynra material. **MUS
 12.3 Every image has `alt` text; decorative images use `alt=""`.
 12.4 Layouts **MUST** reflow down to 320 px width with no horizontal scroll (except fixed-format outputs: decks, print, signage).
 12.5 Print documents (A3/A4/A5 signage, house rules, schedules) use fixed page boxes and 12 pt minimum text.
+
+## 13. Presentations
+
+13.1 Three formats, one grid (4.2): the **brandbook** deck (Ash canvas, meta strip, title-left / content-right pages — `slides/Slide*.html`), the **keynote** (spoken over in a room — `slides/Keynote*.html`) and the **sendout** (read alone on a screen — `slides/Sendout*.html`).
+13.2 Keynote: one thought per slide on full-bleed photography with a quiet Obsidian scrim; white type only — a 26 px label over one 90 px line, the block on column 4 or column 1, ending 160 px above the foot; no meta strip, no page numbers; diagrams as white cards on the dot grid with Red Ember for the one result and Granite for commitments.
+13.3 Sendout: Aluminium canvas with the meta strip on every page (page name at the margin, then partner, Lynra, date, Confidential); titles at 110 px in Obsidian at y = 160; running text at 21 px / 1.35 in five-column measures from y = 320, about 1,400 characters a column — more text is another page, never smaller type; one photograph at most, at 80 % over Aluminium on the cover; nothing white on Aluminium.
+13.4 Statements are Funnel Display Medium 90 px; document titles 110 px; labels and card heads 26 px Inter Tight; figures in data visualisation Inter Tight Regular 84 px; quotes in the quote face, never Funnel Display.

@@ -23,7 +23,7 @@ function VillageCard({ name, location, status, rooms, accent }) {
           position:"absolute", top: 16, right: 16,
           background:"rgba(36,36,40,0.85)", color:"#F6F4F4",
           padding:"4px 10px", borderRadius: 999,
-          fontSize: 11, fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase",
+          fontSize: 13, fontWeight: 500,
         }}>{status}</div>
       </div>
       <div style={{padding: 20, display:"flex", flexDirection:"column", gap: 8}}>

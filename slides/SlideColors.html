@@ -1,0 +1,42 @@
+<!-- SlideColors: The palette page: a 90px title and a short intro at left, two rows of 262px swatches with their HEX, RGB, CMYK and Pantone values. — @dsCard group="Slides" page width=1280 height=720 subtitle="The palette page: a 90px title and a short intro at left, two rows of 262px swatches with their HEX, RGB, CMYK and Pantone values." -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<title>SlideColors</title>
+<style>
+  html, body { margin: 0; background: #0e0e10; }
+  .stage { width: 1280px; height: 720px; overflow: hidden; position: relative; }
+  .slide { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden;
+           background: var(--bg); color: var(--fg); font-family: var(--font-body); font-weight: 500;
+           transform: scale(.6666667); transform-origin: 0 0; }
+  .slide * { box-sizing: border-box; }
+  .abs { position: absolute; }
+  .meta { position: absolute; top: 0; left: 0; width: 1920px; height: 52px; font-size: 15px; line-height: 1.3; letter-spacing: -.01em; color: var(--fg); }
+  .meta span { position: absolute; top: 24px; white-space: nowrap; }
+  .title { position: absolute; margin: 0; font-family: var(--font-display); font-weight: 500; font-size: 90px; line-height: .98; letter-spacing: -.04em; color: var(--fg); white-space: nowrap; }
+  .statement { position: absolute; margin: 0; font-size: 36px; line-height: 1.4; }
+  .head24 { font-weight: 600; font-size: 24px; line-height: 1.3; letter-spacing: -.01em; }
+  .body16 { font-size: 16px; line-height: 1.35; }
+  .peg { position: absolute; border-radius: 50%; }
+  .tile { position: absolute; border-radius: var(--radius-md); }
+  .caption { position: absolute; width: 216px; font-size: 16px; line-height: 1.35; }
+  .caption .m { color: var(--fg-muted); }
+  p { margin: 0; }
+  /* slide text takes its container's colour; bundle.css's element defaults would otherwise paint every p and heading in fg */
+  .slide p, .slide h1, .slide h2, .slide h3, .slide h4, .slide h5, .slide h6, .slide blockquote, .slide span { color: inherit; }
+  .slide .title { color: var(--fg); }
+</style>
+</head>
+<body>
+<div class="stage"><div class="slide">
+<div class="meta"><span style="left:38px">Brand ID</span><span style="left:979px">Visual identity</span><span style="left:1135px">Signage</span><span style="left:1450px">Lynra</span><span style="left:1606px">2026</span><span style="left:1763px">Confidential</span></div>
+<div class="abs" style="left:80px;top:144px;width:543px">
+  <h2 style="margin:0 0 24px;font-family:var(--font-display);font-weight:500;font-size:90px;line-height:.98;letter-spacing:-.04em">Colors</h2>
+  <p class="body16" style="width:400px">The color palette is designed to support clarity, contrast and calm. Colors are functional, restrained and consistent; used to structure information, guide attention and maintain visual coherence across all applications.</p>
+</div>
+<div class="abs" style="left:672px;top:110px;width:262px"><div style="width:262px;height:276px;border-radius:var(--radius-md);background:var(--lynra-red-ember)"></div><div style="display:flex;gap:24px;margin-top:16px" class="body16"><div style="width:96px;flex:none">Lynra Red Ember<br><span style="color:var(--fg-muted)">HEX<br>RGB<br>CMYK<br>Pantone®</span></div><div style="color:var(--fg-muted);white-space:nowrap"><br>FF4D4F<br>240 / 80 / 82<br>0 / 84 / 64 / 0<br>Pantone® 1785</div></div></div><div class="abs" style="left:974px;top:110px;width:262px"><div style="width:262px;height:276px;border-radius:var(--radius-md);background:var(--lynra-umber)"></div><div style="display:flex;gap:24px;margin-top:16px" class="body16"><div style="width:96px;flex:none">Lynra Umber<br><span style="color:var(--fg-muted)">HEX<br>RGB<br>CMYK<br>Pantone®</span></div><div style="color:var(--fg-muted);white-space:nowrap"><br>4D0B00<br>73 / 21 / 14<br>42 / 87 / 84 / 66<br>Pantone® 3523</div></div></div><div class="abs" style="left:1276px;top:110px;width:262px"><div style="width:262px;height:276px;border-radius:var(--radius-md);background:var(--lynra-clay)"></div><div style="display:flex;gap:24px;margin-top:16px" class="body16"><div style="width:96px;flex:none">Lynra Clay<br><span style="color:var(--fg-muted)">HEX<br>RGB<br>CMYK<br>Pantone®</span></div><div style="color:var(--fg-muted);white-space:nowrap"><br>ABA69B<br>171 / 165 / 154<br>35 / 30 / 38 / 0<br>–</div></div></div><div class="abs" style="left:1578px;top:110px;width:262px"><div style="width:262px;height:276px;border-radius:var(--radius-md);background:var(--lynra-granite)"></div><div style="display:flex;gap:24px;margin-top:16px" class="body16"><div style="width:96px;flex:none">Lynra Granite<br><span style="color:var(--fg-muted)">HEX<br>RGB<br>CMYK<br>Pantone®</span></div><div style="color:var(--fg-muted);white-space:nowrap"><br>3E3B34<br>62 / 59 / 52<br>64 / 60 / 67 / 54<br>–</div></div></div><div class="abs" style="left:370px;top:547px;width:262px"><div style="width:262px;height:276px;border-radius:var(--radius-md);background:var(--lynra-ash);box-shadow:inset 0 0 0 1px var(--border)"></div><div style="display:flex;gap:24px;margin-top:16px" class="body16"><div style="width:96px;flex:none">Lynra Ash<br><span style="color:var(--fg-muted)">HEX<br>RGB<br>CMYK<br>Pantone®</span></div><div style="color:var(--fg-muted);white-space:nowrap"><br>F6F4F4<br>246 / 244 / 244<br>2 / 2 / 2 / 0<br>–</div></div></div><div class="abs" style="left:672px;top:547px;width:262px"><div style="width:262px;height:276px;border-radius:var(--radius-md);background:var(--lynra-obsidian)"></div><div style="display:flex;gap:24px;margin-top:16px" class="body16"><div style="width:96px;flex:none">Lynra Obsidian<br><span style="color:var(--fg-muted)">HEX<br>RGB<br>CMYK<br>Pantone®</span></div><div style="color:var(--fg-muted);white-space:nowrap"><br>242428<br>36 / 36 / 40<br>0 / 0 / 0 / 94<br>–</div></div></div><div class="abs" style="left:974px;top:547px;width:262px"><div style="width:262px;height:276px;border-radius:var(--radius-md);background:var(--lynra-haze)"></div><div style="display:flex;gap:24px;margin-top:16px" class="body16"><div style="width:96px;flex:none">Lynra Haze<br><span style="color:var(--fg-muted)">HEX<br>RGB<br>CMYK<br>Pantone®</span></div><div style="color:var(--fg-muted);white-space:nowrap"><br>999999<br>153 / 153 / 153<br>43 / 35 / 35 / 0<br>–</div></div></div><div class="abs" style="left:1276px;top:547px;width:262px"><div style="width:262px;height:276px;border-radius:var(--radius-md);background:var(--lynra-aluminium)"></div><div style="display:flex;gap:24px;margin-top:16px" class="body16"><div style="width:96px;flex:none">Lynra Aluminium<br><span style="color:var(--fg-muted)">HEX<br>RGB<br>CMYK<br>Pantone®</span></div><div style="color:var(--fg-muted);white-space:nowrap"><br>D6D0CC<br>214 / 209 / 204<br>15 / 14 / 16 / 0<br>–</div></div></div><div class="abs" style="left:1578px;top:547px;width:262px"><div style="width:262px;height:276px;border-radius:var(--radius-md);background:var(--lynra-white);box-shadow:inset 0 0 0 1px var(--border)"></div><div style="display:flex;gap:24px;margin-top:16px" class="body16"><div style="width:96px;flex:none">White<br><span style="color:var(--fg-muted)">HEX<br>RGB<br>CMYK<br>Pantone®</span></div><div style="color:var(--fg-muted);white-space:nowrap"><br>FFFFFF<br>255 / 255 / 255<br>0 / 0 / 0 / 0<br>–</div></div></div>
+</div></div>
+</body>
+</html>

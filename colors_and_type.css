@@ -47,8 +47,7 @@
 
   --font-display:  "Funnel Display", "Inter Tight", system-ui, sans-serif;
   --font-body:     "Inter Tight", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono:     ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  /* Quotes — Times Now is licensed; use Frank Ruhl Libre as the brand-approved fallback */
+  /* Three typefaces only (RULES 3.4). Quotes — Times Now is licensed; Frank Ruhl Libre is the brand-approved fallback */
   --font-quote:    "Frank Ruhl Libre", "Times Now", Georgia, serif;
 
   /* ---------- Type scale (base 16, ratio 1.618 from brandbook) ---------- */

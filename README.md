@@ -43,9 +43,9 @@ Serve the repo over HTTP (`npx serve .`) — font and SVG paths are relative and
 ├── ui_kits/
 │   ├── website/             Marketing components (.jsx + .d.ts) and demo index.html
 │   └── app/                 Resident "Portal" app components (.jsx + .d.ts) and demo index.html
-├── slides/                  16:9 slide templates (Title, Section opener, Content, Bento, Quote, Stat, Wayfinding)
+├── slides/                  21 slide templates on the 1920×1080 canvas: brandbook pages (Slide*), keynote (Keynote*), sendout (Sendout*)
 ├── preview/                 Specimen cards for every token group and component
-├── _ds_bundle.js            Prebuilt bundle of all components (window.LynraDesignSystem_019e30)
+├── _ds_bundle.js            Bundle of the 15 components, built from ui_kits/ only (window.LynraDesignSystem_019e30)
 ├── docs/
 │   ├── RULES.md             Normative rules — MUST / MUST NOT
 │   └── brand-guidelines.md  Full brand reference: voice, visual foundations, iconography
@@ -68,7 +68,7 @@ Each component has a `.d.ts` with its props. Open `ui_kits/*/index.html` for a r
 | Group | Values |
 |---|---|
 | Brand colours | Red Ember `#FF4D4F` · Umber `#4D0B00` · Clay `#ABA69B` · Granite `#3E3B34` · Ash `#F6F4F4` · Obsidian `#242428` · Haze `#999999` · Aluminium `#D6D0CC` · White `#FFFFFF` |
-| Type | Funnel Display (display) · Inter Tight (body/UI) · Frank Ruhl Libre (quote fallback for licensed Times Now) |
+| Type | Funnel Display (display) · Inter Tight (body/UI) · Frank Ruhl Libre (quote fallback for licensed Times Now) — nothing else |
 | Scale | 12 / 14 / 16 / 18 / 21 / 26 / 42 / 68 / 90 / 110 / 177 px |
 | Spacing | 8 / 16 / 24 / 32 / 40 / 64 / 80 / 120 px |
 | Radius | 6 / 8 / **10 (default)** / 16 / 24 / 40 / pill |
@@ -76,13 +76,18 @@ Each component has a `.d.ts` with its props. Open `ui_kits/*/index.html` for a r
 
 ## Rules
 
-Read [`docs/RULES.md`](docs/RULES.md) before designing or coding with the system. The short version: grayscale plus one accent, Funnel Display for display and Inter Tight for everything else, sentence case, no punctuation on headlines, no emoji, Phosphor icons, always rounded corners.
+Read [`docs/RULES.md`](docs/RULES.md) before designing or coding with the system. The short version: grayscale plus one accent, Funnel Display for display and Inter Tight for everything else, sentence case everywhere (no ALL CAPS, no letter-spaced labels), no punctuation on headlines, no emoji, Phosphor icons, always rounded corners.
+
+## Presentations
+
+Three formats on one 12-column grid (80px margins, 110px columns, 40px gutters): the **brandbook** pages (`slides/Slide*.html`), the **keynote** for a room — full-bleed photography, one 90px statement per slide, no meta strip (`slides/Keynote*.html`) — and the **sendout** to be read alone — Aluminium canvas, 110px titles, 21px text in five-column measures, the meta strip on every page (`slides/Sendout*.html`). Open `slides/index.html` for all 21; the rules are in [`docs/RULES.md`](docs/RULES.md) §13 and the rationale in [`docs/brand-guidelines.md`](docs/brand-guidelines.md).
 
 ## Known gaps
 
 - **Times Now** is licensed and not included. Quotes fall back to Frank Ruhl Libre (Google Fonts) — add the licensed files to `fonts/` and `fonts.css` if you hold a licence.
 - Phosphor icon mappings in the guidelines are best matches to the brandbook; verify on phosphoricons.com.
-- `_ds_bundle.js` is a prebuilt artefact. Rebuild it when component source changes (see CONTRIBUTING.md).
+- `_ds_bundle.js` is built from the 15 `ui_kits/` sources only (esbuild, JSX → `React.createElement`, one IIFE). Rebuild it when component source changes (see CONTRIBUTING.md).
+- The live design system built from this repository (tokens, assets, components with previews, the slide templates) is the *Lynra Design System* artifact on claude.ai; a re-sync from `main` refreshes it.
 
 ## Ownership
 

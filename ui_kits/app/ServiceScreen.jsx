@@ -24,8 +24,7 @@ function ServiceScreen() {
       <div className="scroll">
         <div style={{padding: "8px 0 24px"}}>
           <div style={{
-            fontFamily:"var(--font-body)", fontSize: 12, fontWeight: 600,
-            letterSpacing:"0.04em", textTransform:"uppercase",
+            fontFamily:"var(--font-body)", fontSize: 14, fontWeight: 500,
             color: "var(--fg-muted)",
           }}>Polaris Village</div>
           <h2 style={{
@@ -61,7 +60,7 @@ function ServiceScreen() {
           display:"flex", flexDirection:"column", gap: 16,
         }}>
           <span style={{
-            fontSize: 12, fontWeight: 600, letterSpacing:"0.04em", textTransform:"uppercase",
+            fontSize: 14, fontWeight: 500,
             color: "var(--lynra-haze)",
           }}>Last ticket · #B-2418</span>
           <p style={{

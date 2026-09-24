@@ -42,9 +42,8 @@ function Hero() {
         }}>
           <div style={{display:"flex", flexDirection:"column", gap:4}}>
             <span style={{
-              fontFamily:"var(--font-body)", fontSize: 11, fontWeight: 600,
-              letterSpacing: "0.06em", textTransform: "uppercase", color: "#F6F4F4",
-              opacity: 0.7,
+              fontFamily:"var(--font-body)", fontSize: 14, fontWeight: 500, color: "#F6F4F4",
+              opacity: 0.85,
             }}>Now serving</span>
             <span style={{
               fontFamily:"var(--font-display)", fontSize: 32, fontWeight: 500,

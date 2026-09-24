@@ -1,0 +1,50 @@
+<!-- SendoutColumns: Sendout two-column page: two 110px titles on columns 1 and 7 at y = 160, numbered 21px text under each in a five-column measure. — @dsCard group="Sendout" page width=1280 height=720 subtitle="Sendout two-column page: two 110px titles on columns 1 and 7 at y = 160, numbered 21px text under each in a five-column measure." -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<title>SendoutColumns</title>
+<style>
+  html, body { margin: 0; background: #0e0e10; }
+  .stage { width: 1280px; height: 720px; overflow: hidden; position: relative; }
+  .slide { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden;
+           background: var(--bg); color: var(--fg); font-family: var(--font-body); font-weight: 500;
+           transform: scale(.6666667); transform-origin: 0 0; }
+  .slide * { box-sizing: border-box; }
+  .abs { position: absolute; }
+  .meta { position: absolute; top: 0; left: 0; width: 1920px; height: 52px; font-size: 15px; line-height: 1.3; letter-spacing: -.01em; color: var(--fg); }
+  .meta span { position: absolute; top: 24px; white-space: nowrap; }
+  .title { position: absolute; margin: 0; font-family: var(--font-display); font-weight: 500; font-size: 90px; line-height: .98; letter-spacing: -.04em; color: var(--fg); white-space: nowrap; }
+  .statement { position: absolute; margin: 0; font-size: 36px; line-height: 1.4; }
+  .head24 { font-weight: 600; font-size: 24px; line-height: 1.3; letter-spacing: -.01em; }
+  .body16 { font-size: 16px; line-height: 1.35; }
+  .peg { position: absolute; border-radius: 50%; }
+  .tile { position: absolute; border-radius: var(--radius-md); }
+  .caption { position: absolute; width: 216px; font-size: 16px; line-height: 1.35; }
+  .caption .m { color: var(--fg-muted); }
+  p { margin: 0; }
+  /* slide text takes its container's colour; bundle.css's element defaults would otherwise paint every p and heading in fg */
+  .slide p, .slide h1, .slide h2, .slide h3, .slide h4, .slide h5, .slide h6, .slide blockquote, .slide span { color: inherit; }
+  .slide .title { color: var(--fg); }
+  .send { background: var(--lynra-aluminium); }
+  .h110 { position: absolute; margin: 0; font-family: var(--font-display); font-weight: 500; font-size: 110px; line-height: .98; letter-spacing: -.04em; color: var(--fg); white-space: nowrap; }
+  .copy { position: absolute; font-size: 21px; line-height: 1.35; color: var(--fg); }
+  .copy p { margin: 0 0 21px; }
+  .copy p:last-child { margin-bottom: 0; }
+  .copy ol { margin: 0; padding: 0; list-style: none; counter-reset: item; }
+  .copy li { margin: 0 0 16px; padding-left: 48px; position: relative; counter-increment: item; }
+  .copy li::before { content: counter(item) "."; position: absolute; left: 0; }
+</style>
+</head>
+<body>
+<div class="stage"><div class="slide">
+<div class="abs send" style="left:0;top:0;width:1920px;height:1080px"></div>
+<div class="meta"><span style="left:80px">Digital touchpoints</span><span style="left:979px">Partner name</span><span style="left:1450px">Lynra</span><span style="left:1606px">24 Feb 2026</span><span style="left:1763px">Confidential</span></div>
+<h2 class="h110" style="left:80px;top:160px">UX and design</h2>
+<h2 class="h110" style="left:980px;top:160px">Tech</h2>
+<div class="copy" style="left:80px;top:320px;width:710px"><ol><li>Modern interface standard. All user-facing interfaces must use current design patterns and interaction models, aligned with contemporary consumer-grade digital products.</li><li>Performance. Page load time must not exceed 1.5 seconds on standard mobile connections; perceived performance is supported through skeleton states, progressive loading and optimistic updates.</li><li>Design-led user experience. Navigation, hierarchy and flow follow established UX principles. Every screen shows intentional layout and purposeful use of space; no default framework components in production.</li><li>Unified visual system. Web, app, notifications and embedded widgets share one design language — typography, colour, spacing, iconography and components consistent on every surface.</li></ol></div>
+<div class="copy" style="left:980px;top:320px;width:710px"><ol><li>Interoperability. Solutions that solve a variety of problems from the same interface: the guest opens doors, books laundry slots and orders food pick-up in one app; staff keep all guest communication in one system. Documented APIs whenever relevant.</li><li>Scalability. Lynra is on a growth journey and chooses partners who plan for it: a system built for 50 buildings today needs a viable plan for 600.</li><li>Flexibility. We learn along the way, experiment and iterate — a mindset we hope you share, including bespoke solutions outside your current routines when asked.</li></ol></div>
+</div></div>
+</body>
+</html>

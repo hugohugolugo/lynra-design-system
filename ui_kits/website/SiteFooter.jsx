@@ -27,9 +27,8 @@ function SiteFooter() {
         {cols.map(col => (
           <div key={col.title} style={{display:"flex", flexDirection:"column", gap: 14}}>
             <div style={{
-              fontFamily:"var(--font-body)", fontWeight: 600, fontSize: 13,
-              letterSpacing: "0.04em", textTransform: "uppercase",
-              color: "var(--lynra-granite)",
+              fontFamily:"var(--font-body)", fontWeight: 600, fontSize: 16,
+              letterSpacing: "-0.01em", color: "var(--fg)",
             }}>{col.title}</div>
             {col.items.map(i => (
               <a key={i} href="#" style={{
@@ -42,7 +41,7 @@ function SiteFooter() {
       <div style={{
         display:"flex", justifyContent:"space-between", alignItems:"center",
         paddingTop: 24, borderTop: "1px solid rgba(36,36,40,0.15)",
-        fontSize: 12, color: "var(--lynra-granite)", letterSpacing: "0.04em", textTransform: "uppercase",
+        fontSize: 14, color: "var(--lynra-granite)",
       }}>
         <span>© 2026 Lynra · A Strawberry Living company</span>
         <span>Privacy · Terms · Cookies</span>

@@ -14,8 +14,7 @@ function VillageScreen() {
       <div className="scroll">
         <div style={{padding: "8px 0 20px"}}>
           <div style={{
-            fontFamily:"var(--font-body)", fontSize: 12, fontWeight: 600,
-            letterSpacing:"0.04em", textTransform:"uppercase",
+            fontFamily:"var(--font-body)", fontSize: 14, fontWeight: 500,
             color: "var(--fg-muted)",
           }}>Now · Luleå, SE</div>
           <h2 style={{
@@ -34,7 +33,7 @@ function VillageScreen() {
           overflow:"hidden", position:"relative", height: 140,
         }}>
           <div style={{position:"relative", zIndex:1, display:"flex", flexDirection:"column", justifyContent:"space-between", height:"100%"}}>
-            <span style={{fontSize: 11, fontWeight: 700, letterSpacing:"0.06em", textTransform:"uppercase"}}>Open now · 24/7</span>
+            <span style={{fontSize: 14, fontWeight: 500}}>Open now · 24/7</span>
             <span style={{fontFamily:"var(--font-display)", fontSize: 52, lineHeight: 0.9, letterSpacing:"-0.04em", fontWeight: 500}}>Gym</span>
           </div>
           <span style={{

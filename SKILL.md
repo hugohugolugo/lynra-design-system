@@ -23,7 +23,7 @@ After that, explore:
 - `ui_kits/website/` — marketing site components.
 - `ui_kits/app/` — resident "Portal" app components (canonical check-in
   screen + dashboard + services + village + account).
-- `slides/` — sample brandbook-style 16:9 slides.
+- `slides/` — 21 slide templates: brandbook pages, keynote and sendout formats.
 
 ## When the user invokes this skill
 
@@ -45,7 +45,8 @@ Then act as a senior Lynra designer.
 - **Type**: Funnel Display for display (Medium 500 default; SemiBold 600 /
   Bold 700 for emphasis). Inter Tight for everything else (Medium 500 for
   body, SemiBold 600 for intro / UI titles).
-- **Headlines have no punctuation.** Sentence case everywhere.
+- **Headlines have no punctuation.** Sentence case everywhere — no ALL CAPS
+  and no letter-spaced small labels, not even in a meta strip.
 - **No emoji.** Use Phosphor icons (`light` weight on web, `thin` weight in
   decks).
 - **Always rounded** — never sharp. Default card radius 10px.
@@ -63,8 +64,12 @@ Words like "calibrated", "aligned", "steady", "configured" are on-brand.
 
 ## Default starting points
 
-- **A slide** → start from `slides/SectionOpenerSlide.html` or
-  `slides/ContentSlide.html`. 1280×720 frame, meta strip on top, Ash background.
+- **A slide** → brandbook style: `slides/SlideContent.html`, `SlideColumns`,
+  `SlideCards` or `SlideSectionOpener`; a spoken keynote: `slides/KeynoteTitle.html`
+  and `KeynoteStatement` (photography, one statement a slide, no meta strip);
+  a deck to be read alone: `slides/SendoutCover.html`, `SendoutText`,
+  `SendoutColumns` (Aluminium, 21px text, meta strip). All are the 1920×1080
+  canvas on the 12-column grid, shown at 1280×720.
 - **A marketing page** → start from `ui_kits/website/index.html`.
 - **An app screen** → start from `ui_kits/app/CheckInScreen.jsx` or
   `DashboardScreen.jsx`. 390×844 phone canvas.

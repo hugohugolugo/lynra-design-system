@@ -83,9 +83,11 @@ subtly futuristic.** Five pillars from the brandbook:
 
 ### Tone in practice
 
-- **Sentence case** for everything — headlines, buttons, navigation. No
-  ALL-CAPS as a style choice; ALL-CAPS is reserved for very small labels or
-  utility marks (e.g. header meta "BRAND ID Lynra 2025 CONFIDENTIAL").
+- **Sentence case** for everything — headlines, buttons, navigation, labels
+  and the meta strip. No ALL CAPS anywhere and no letter-spaced small labels;
+  the deck's meta strip is 15px Inter Tight Medium in sentence case
+  ("Brand ID · Lynra · 2026 · Confidential"). A label above a headline is a
+  plain line or, on the site, the white `.section-label` pill.
 - **No punctuation** on display headlines ("Lynra builds villages that make
   temporary life work really well" — no period).
 - **You** speaks directly to the resident ("Your room is designed to give you
@@ -158,6 +160,7 @@ Three high-leverage combinations from the brandbook:
 
 Scale: base 16, ratio 1.618 (golden) → 16 / 26 / 42 / 68 / 110 / 177 px.
 Spacing follows the **8px rule**: 8 / 16 / 24 / 32 / 40 / 64 / 80 / 120.
+Three typefaces and nothing else — no system sans-serif, no monospace.
 
 ### Corner radii
 
@@ -200,7 +203,10 @@ Steady, considered, never bouncy.
 
 ### Layout rules
 
-- 1920×1080 deck canvas. Side margin **80px**, header height **52px**.
+- 1920×1080 deck canvas. Side margin **80px**, header height **52px**, on a
+  12-column grid: 110px columns, 40px gutters, column *k* at 80 + 150(*k* − 1).
+  The right column is column 7 (x = 980); a text measure is five columns
+  (710px); a card is 271px with 24px gaps.
 - Web layout uses the same 8px scale; container max-width ~1280–1440.
 - The **Bento layout** is the brand's preferred multi-panel composition:
   asymmetric rectangular tiles with 10–16px radii and 16px gaps. Reserve it
@@ -217,6 +223,32 @@ Steady, considered, never bouncy.
 - **Wayfinding arrows** (`→ Gym Opened 24/7`) — bold, geometric, big.
 - **Strawberry byline** under the wordmark — for executive / employer-brand
   contexts only, rarely.
+
+### Presentation formats
+
+Three decks share the grid above; every template lives in `slides/` on the
+1920×1080 canvas, shown at 1280×720.
+
+- **Brandbook** (`Slide*.html`) — the reference deck: Ash canvas, the meta
+  strip, the title-left / content-right page (title in Funnel Display 90px at
+  x = 80, y = 386; content from x = 980), section openers with the giant
+  Clay word and the Ash peg-board card, card grids, the stat page, the Bento,
+  wayfinding and the colour page.
+- **Keynote** (`Keynote*.html`) — spoken over in a room. One thought per
+  slide on full-bleed photography from `assets/imagery/` with a quiet
+  Obsidian scrim on the lower half; white type only — a 26px label
+  ("Vision:", "Insight:", "Outcome:") over one 90px line, the block on
+  column 4 or column 1 and ending 160px above the foot; a logo slide; an
+  Aluminium pause slide; diagrams as white cards on the dot grid with Red
+  Ember for the one result and Granite for commitments. No meta strip, no
+  page numbers, nothing under 21px, never more than one statement on a slide.
+- **Sendout** (`Sendout*.html`) — read alone on a screen, usually as a PDF.
+  Aluminium canvas with the meta strip on every page (page name at the
+  margin, then partner, Lynra, date, Confidential); titles at 110px in
+  Obsidian at y = 160; running text at 21px / 1.35 in five-column measures
+  from y = 320, about 1,400 characters a column — more text is another page,
+  never smaller type; one photograph at most, at 80% over Aluminium on the
+  cover, on columns 7–12 inside; nothing white on Aluminium.
 
 ### Don'ts (from the brandbook)
 
@@ -300,7 +332,7 @@ running text but prefer Phosphor `ph-circle-fill` at scale.
 | `preview/` | Design-system tab cards (Type, Colors, Spacing, Components, Brand). |
 | `ui_kits/website/` | Marketing site UI kit (React/JSX). Components are exported on the bundle namespace — see below. |
 | `ui_kits/app/` | Resident "Portal" app UI kit. Components are exported on the bundle namespace — see below. |
-| `slides/` | Sample brandbook-style 16:9 slides. |
+| `slides/` | 21 slide templates: brandbook pages (`Slide*`), keynote (`Keynote*`) and sendout (`Sendout*`), with an index. |
 | `SKILL.md` | Agent Skill manifest — load this folder as a Claude Code skill. |
 | `README.md` | This file. |
 

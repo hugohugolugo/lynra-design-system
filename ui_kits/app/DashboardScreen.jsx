@@ -15,8 +15,7 @@ function DashboardScreen({ onOpenServices, onOpenVillage }) {
         {/* Greeting */}
         <div style={{padding: "8px 0 24px"}}>
           <div style={{
-            fontFamily:"var(--font-body)", fontSize: 12, fontWeight: 600,
-            letterSpacing:"0.04em", textTransform:"uppercase",
+            fontFamily:"var(--font-body)", fontSize: 14, fontWeight: 500,
             color: "var(--fg-muted)",
           }}>Polaris Village · Room 218</div>
           <h2 style={{
@@ -35,8 +34,7 @@ function DashboardScreen({ onOpenServices, onOpenVillage }) {
           position:"relative", overflow:"hidden",
         }}>
           <span style={{
-            fontSize: 12, fontWeight: 600, letterSpacing:"0.04em",
-            textTransform:"uppercase", opacity: 0.75,
+            fontSize: 14, fontWeight: 500, opacity: 0.85,
           }}>Your stay</span>
           <div style={{
             display:"flex", justifyContent:"space-between", alignItems:"flex-end",
@@ -103,8 +101,8 @@ function SectionHeader({ title, count }) {
       padding: "24px 4px 12px",
     }}>
       <h3 style={{
-        fontFamily:"var(--font-body)", fontWeight: 600, fontSize: 13,
-        letterSpacing: "0.04em", textTransform: "uppercase", margin: 0,
+        fontFamily:"var(--font-body)", fontWeight: 600, fontSize: 16,
+        letterSpacing: "-0.01em", margin: 0,
         color: "var(--fg)",
       }}>{title}</h3>
       {count != null && (
@@ -133,7 +131,7 @@ function TicketRow({ icon, title, meta, status }) {
         <div style={{fontSize: 12, color:"var(--fg-muted)"}}>{meta}</div>
       </div>
       <span style={{
-        fontSize: 11, fontWeight: 600, letterSpacing:"0.04em", textTransform:"uppercase",
+        fontSize: 12, fontWeight: 500,
         color: status === "In progress" ? "var(--lynra-umber)" : "var(--fg-muted)",
         background: status === "In progress" ? "var(--lynra-red-ember)" : "transparent",
         border: status === "In progress" ? "0" : "1px solid var(--border)",

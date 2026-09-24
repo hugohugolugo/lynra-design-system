@@ -8,7 +8,7 @@ function QuoteBlock() {
       marginTop: 16,
     }}>
       <div style={{maxWidth: 980}}>
-        <span className="section-label" style={{color:"var(--lynra-haze)", margin:"0 0 32px"}}>Brand's promise</span>
+        <span className="section-label" style={{margin:"0 0 32px"}}>Brand's promise</span>
         <h2 style={{
           fontFamily:"var(--font-display)", fontWeight: 500,
           fontSize: 84, lineHeight: 0.98, letterSpacing: "-0.04em",
